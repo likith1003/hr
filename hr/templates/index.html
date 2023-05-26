@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %} Home Page{% endblock title %}
+
+{% block body %}
+<form action="staff" method="post">
+    {% csrf_token %}
+    <input type="text" placeholder="Email or Username" name="un"><br><br>
+    <input type="password" name="pw" id="" placeholder='enter password'> <br>
+    <button>Login</button>
+</form>
+{% for i in data %}<br>
+{{i.username}} {{i.password}}
+
+{% endfor %}
+<style>
+    form{
+        width: 25%;
+    margin: auto;
+    text-align: center;
+    border: 1px solid black;
+    padding: 75px;
+    }
+</style>
+
+{% endblock body %}
+

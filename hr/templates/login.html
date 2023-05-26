@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}Student Login{% endblock title %}
+{% block body %}
+<form action="login" method="post">
+    {% csrf_token %}
+    <input type="text" placeholder="Email or Username" name="un"><br><br>
+    <input type="password" name="pw" id="" placeholder='enter password'> <br>
+    <button>Login</button>
+    {{data}}
+</form>
+
+{% for i in messages  %}
+{{i}}
+{% endfor %}<br><br>
+<table>
+    <tr>
+        <th>Name</th>
+    <th>Pno</th>
+    <th>Email</th>
+    <th>Dob</th>
+    <th>Mock Rating</th>
+    </tr>
+    <tr>
+        <td>{{user.name}}</td>
+        <td>{{user.pno}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.dob}}</td>
+        <td>{{user.mock}}</td>
+    </tr>
+</table>
+<style>
+    table,th,td,tr{
+        border: 1px solid black;
+        border-collapse: collapse;
+        
+    }
+    td{
+        padding: 10px;
+    }
+</style>
+<br><br>
+<br><br>
+<br><br>
+{% endblock body %}

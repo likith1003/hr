@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<h1>Hello welcome This is Student registration  page</h1>
+<form action="register" method="post">
+    {% csrf_token %}
+    <input type="text" placeholder="Name" name="nme"> <br><br>
+    <input type="text" placeholder="Pno" name="pno"> <br><br>
+    <input type="text" placeholder="Email" name="email"><br><br>
+    <label for="">Gender</label> <br>
+    <label for="">Male</label>
+    <input type="radio" name="gender" id="male" checked val>
+    <label for="">Female</label>
+    <input type="radio" name="gender" id="female"> <br></br>
+    <input type="date" name="dob" id="" placeholder="Date of Birth"><br><br>
+    <input type="password" name="pw" id="" placeholder='enter password'> <br>
+    <input type="password" name="cpw" id="" placeholder="Confirm Password"> <br><br>
+    <button>Register</button>
+</form>
+<script>
+    function fn(){
+        if (document.getElementById('male').checked){
+            return document.querySelector('gender').value='Male'
+        }
+        else if(document.getElementById('female').checked){
+            return document.querySelector('gender').value='Female'
+        }
+        else{
+            return document.querySelector('gender').value='Flame'
+        }
+    }
+</script>
+<style>
+    form{
+        width: 25%;
+    margin: auto;
+    text-align: center;
+    border: 1px solid black;
+    padding: 75px;
+    }
+</style>
+    
+</body>
+</html>
